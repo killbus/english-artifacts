@@ -1,8 +1,16 @@
 # H000 — Product Hypothesis Template
 
+## Hypothesis
+
+[One falsifiable sentence]
+
 ## User
 
-[Specific user in a specific situation]
+[Specific user, not a broad demographic]
+
+## Trigger
+
+[What happens immediately before the need]
 
 ## Problem
 
@@ -12,13 +20,17 @@
 
 [What the user does today]
 
-## Product hypothesis
+## Job to be done
 
-[What artifact might help]
+[What the user wants to accomplish]
 
-## Why PDF
+## Artifact hypothesis
 
-[Why a persistent / printable / structured artifact is useful rather than a chat answer, webpage, app, or ordinary article]
+[What the PDF would be]
+
+## Why this format
+
+[Why a static / printable / persistent artifact has an advantage]
 
 ## Core behavior
 
@@ -28,10 +40,24 @@
 
 [How important user input returns or accumulates]
 
+## Content hook
+
+[The publishable problem framing]
+
+## Price hypothesis
+
+[First diagnostic price and why]
+
 ## Validation
 
-[What evidence would support or reject the hypothesis]
+[Experiment]
+
+## Success / falsifier
+
+[What would support or reject this]
 
 ## Status
 
-PROPOSED
+proposed
+
+<!-- Keep one canonical product-hypothesis template in this directory. -->

@@ -7,8 +7,6 @@ DBS is a reasoning and routing layer used to improve decisions under uncertainty
 ## System map
 
 ```text
-DBS
-  ↓
 Research / Evidence
   ↓
 Problem
@@ -32,6 +30,28 @@ Market / Usage Evidence
 Learning
   ↓
 Decision
+
+DBS is a re-entry layer: invoke it whenever uncertainty requires routing,
+diagnosis, comparison, theory grounding, content reasoning, or a decision about
+the next evidence-generating action.
+```
+
+Conceptually:
+
+```text
+                         ┌──────────────┐
+                         │     DBS      │
+                         │ re-entry     │
+                         └──────┬───────┘
+                                │
+                                ▼
+Research → Problem → Opportunity → Hypothesis → Experiment
+    ▲                                             │
+    │                                             ▼
+    └──────────── Learning ← Evidence ←────── Artifact
+                                │
+                                ▼
+                             Decision
 ```
 
 ## Epistemic layers
@@ -50,8 +70,9 @@ Do not collapse these categories.
 
 ### DBS
 
-Helps determine what to investigate, diagnose, compare, ground in theory, or
-test next.
+Helps determine what to investigate, diagnose, compare, ground in theory, test,
+or reconsider next. DBS may be invoked at multiple points in the lifecycle;
+its output is guidance, not product truth.
 
 ### english-artifacts
 
