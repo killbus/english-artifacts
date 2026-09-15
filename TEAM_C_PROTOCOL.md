@@ -1,66 +1,87 @@
 # Team C Protocol
 
-Team C is the implementation layer.
+Team C is the implementation team for PDF artifacts.
 
-Primary stack:
-
-> `handbook-pdf` → Typst / code → build → QA → preview
+Its purpose is to turn an already-defined product behavior into a reliable
+`handbook-pdf` artifact without silently changing the product.
 
 ## C owns
 
-- implementation;
-- page templates and reusable components;
-- data wiring;
-- build reliability;
-- PDF QA;
-- previews;
-- technical documentation.
+- `handbook-pdf` implementation
+- Typst / code
+- reusable components
+- build
+- QA
+- previews
+- technical reporting
+- implementation structure
+- build strategy
+- QA automation
 
-## C does not own
+## C may decide
 
-- audience definition;
-- problem selection;
-- product positioning;
-- pricing strategy;
-- product scope;
-- core user behavior;
-- product theory;
-- decisions about whether a feature should exist.
+Within the product boundary, Team C may decide implementation details such as:
 
-## Non-negotiable behavior rules
+- component structure
+- file organization
+- Typst details
+- reusable component design
+- build strategy
+- QA automation
+- rendering optimizations that preserve behavior
 
-### 1. Do not convert the product into a generic workbook
+## C does NOT own
 
-Do not add lessons, vocabulary lists, grammar sections, answer keys, or explanatory pages unless the product spec explicitly requires them.
+Team C must not decide without upstream approval:
 
-### 2. Do not convert the product into a habit tracker
+- audience definition
+- user problem
+- product promise
+- pricing strategy
+- product positioning
+- core user behavior
+- behavioral loop
+- Echo mechanism
+- product scope expansion
+- whether the product should exist
 
-Do not add streaks, progress bars, daily completion, points, badges, or calendars merely because they are easy to implement.
+## Handoff order
 
-### 3. Do not add behavior through implementation convenience
+```text
+Product Intent
+  ↓
+Behavioral Constraints
+  ↓
+Echo Contract
+  ↓
+Information Architecture
+  ↓
+Technical Requirements
+  ↓
+Implementation
+  ↓
+QA
+```
 
-A component is not a product requirement.
+## Product-behavior boundary
 
-### 4. Preserve the Echo Contract
+Technical convenience must not silently change product behavior.
 
-If the product spec says a user input must return later, the implementation must preserve that mechanism.
+Examples of changes that require upstream approval:
 
-### 5. Do not optimize page count
+- adding a calendar because it is visually convenient
+- adding streaks or progress tracking
+- adding new learning modules
+- expanding a small artifact into a course or workbook
+- adding pages merely to improve page count or visual density
+- changing the behavioral loop to simplify implementation
 
-Empty space is preferable to irrelevant content.
+## Ambiguity rule
 
-### 6. Surface conflicts; do not resolve product conflicts silently
+If implementation reveals a product ambiguity, report the ambiguity instead
+of silently resolving it by adding or removing user behavior.
 
-When the spec and implementation constraints conflict, report the conflict to the product side.
+## Fidelity rule
 
-## Acceptance test
-
-Before delivery, Team C must be able to answer:
-
-- What is the user's core job?
-- What important input does the user create?
-- Where does that input return?
-- What new behavior happens at return?
-- Which pages exist because of product behavior rather than visual filler?
-
-If those answers are unclear, stop implementation and report the ambiguity.
+The implementation is successful only when it preserves the intended user
+behavior, not merely when the PDF compiles or looks polished.

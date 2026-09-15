@@ -2,7 +2,11 @@
 
 ## Purpose
 
-Define how a static artifact can produce a meaningful return loop without dynamic software.
+Define how a static artifact can produce a meaningful return loop without
+dynamic software.
+
+The PDF itself does not need to mutate. The user's filled state is the changing
+layer.
 
 ## Required fields
 
@@ -25,7 +29,8 @@ A later page explicitly asks the user to revisit an earlier entry.
 
 ### Version comparison
 
-The user creates a first version and later creates another without looking at the first version, then compares them.
+The user creates a first version and later creates another without looking at
+the first version, then compares them.
 
 ### Reuse
 
@@ -41,10 +46,22 @@ A subset of user-generated items is indexed for future retrieval.
 
 ## Anti-pattern
 
-Do not call an artifact “echo-based” if the user's input is collected once and never used again.
+Do not call an artifact "echo-based" if the user's input is collected once
+and never used again.
 
 ## Static-PDF rule
 
 The PDF itself does not need to mutate.
 
 The user's filled state is the changing layer.
+
+## Design test
+
+For each important input, answer:
+
+1. What does the user create here?
+2. Where does it return?
+3. What new action happens when it returns?
+4. What visible evidence of change can the user observe?
+
+If an important input never returns, question whether the field needs to exist.
